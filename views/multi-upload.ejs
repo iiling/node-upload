@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+<h1><%= title %></h1>
+<p>Welcome to <%= title %></p>
+<input type="file" name="file" id="file1" />
+<input type="file" name="file" id="file2" />
+<input type="file" name="file" id="file3" />
+<button id="upload">上传</button>
+<span id="progress">0</span>
+<script type="text/javascript">
+    (function () {
+        'use strict';
+        var file1 = document.querySelector('#file1');
+        var file2 = document.querySelector('#file2');
+        var file3 = document.querySelector('#file3');
+        var progress = document.querySelector('#progress');
+        var xhr = new XMLHttpRequest();
+
+        upload.addEventListener('click', uploadFile, false);
+        file.addEventListener('change', previewImage, false);
+
+        // 点击上传
+        function uploadFile(event) {
+            var formData = new FormData();
+            formData.append('muilt-upload', file1.files[0]);
+            formData.append('muilt-upload', file2.files[0]);
+            formData.append('muilt-upload', file3.files[0]);
+            xhr.onload = uploadSuccess;
+            xhr.upload.onprogress = setProgress;
+            xhr.open('post', '/mulitupload', true);
+            xhr.send(formData);
+        }
+
+        // 成功上传
+        function uploadSuccess(event) {
+            if (xhr.readyState === 4) {
+                console.log(xhr.responseText);
+            }
+        }
+        // 进度条
+        function setProgress(event) {
+            if (event.lengthComputable) {
+                var complete = Number.parseInt(event.loaded / event.total * 100);
+                progress.innerHTML = complete + '%';
+            }
+        }
+
+    })();
+</script>
+</body>
+</html>
