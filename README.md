@@ -5,10 +5,10 @@
 
 
 ### 实现了四种上传方式
-  *html5 form-data 单文件上传
-  *html5 form-data 多文件上传
-  *flash swfupload 单文件和多文件上传
-  *flash uploadify 单文件和多文件上传
+* html5 form-data 单文件上传
+* html5 form-data 多文件上传
+* flash swfupload 单文件和多文件上传
+* flash uploadify 单文件和多文件上传
 
 #### 在路由index内写了4个接口  分别对应不同的上传demo入口
   
