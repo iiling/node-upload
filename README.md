@@ -13,7 +13,10 @@
 
 
 #### 在路由index内写了4个接口  分别对应不同的上传demo入口
-  
+ * "/"  单文件上传页面 html5
+ * "/2" 多文件上传页面 html5
+ * "/3" swfupload flash
+ * "/4" uploadify flash
 
 
 
