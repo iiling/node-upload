@@ -105,6 +105,7 @@ router.post('/swfupload',function (req,res,next) {
     var uploadUrl=path.join(__dirname,"../uploads");
     form.uploadDir =uploadUrl;
     form.keepExtensions = true;
+    // parse方法解析node.js中request请求中包含的form表单提交的数据。
     form.parse(req, function(err, fields, files) {
         console.log(req.cookies);//cookies not accessible (prints 'null')
         console.log(files);// Contains all info on uploaded file
@@ -122,6 +123,7 @@ router.post('/uploadify',function (req,res,next) {
     var uploadUrl=path.join(__dirname,"../uploads");
     form.uploadDir =uploadUrl;
     form.keepExtensions = true;
+    // parse方法解析node.js中request请求中包含的form表单提交的数据。
     form.parse(req, function(err, fields, files) {
         console.log(req.cookies);//cookies not accessible (prints 'null')
         console.log(files);// Contains all info on uploaded file
