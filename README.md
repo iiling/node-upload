@@ -1,6 +1,6 @@
 ﻿# node-upload
 
-> 基于node后台HTML5异步上传+FLASH异步上传,本demo涉及四种上传方式
+> 基于node后台HTML5异步上传+FLASH异步上传,本demo涉及四种上传方式 
 
 
 
